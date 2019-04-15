@@ -37,16 +37,21 @@ describe('Container', () => {
     let productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(0);
   });
-  // it('container', async () => {
-  //   const { getByTestId, queryAllByTestId } = render(<Container />);
-  //   let productTableItems = queryAllByTestId('productTableItem');
-    
-  //   const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
-  //   act(() => {
-  //     fireEvent.click(addOrderBtn);
-  //   })
-    
-  //   expect(productTableItems).toHaveLength(1);
+
+  it('container', async () => {
+    const { getByTestId, queryAllByTestId } = render(<Container />);
+
+    let productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(0);
+
+    const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
+    await act(async () => {
+      fireEvent.click(addOrderBtn);
+    })
+
+    productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(1);
+
     
   // })
 });

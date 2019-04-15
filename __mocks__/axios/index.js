@@ -1,8 +1,9 @@
-import menu from '../../src/data/menu.json';
+// import menu from '../../src/data/menu.json';
+import { act } from 'react-testing-library';
 
-export default (url) => {
-  return new Promise((resolve) => {
-    resolve({
+export default (url) => ({
+  then : jest.fn((callback) => act(() => {
+    callback({
       data: [
       {
           "id": 1,
@@ -21,5 +22,5 @@ export default (url) => {
           "image": "https://banner2.kisspng.com/20180224/saq/kisspng-latte-coffee-espresso-ristretto-cappuccino-drinks-latte-5a915ca65077a8.5479297115194758783296.jpg" 
       }
     ]});
-  });
-};
+  }))
+});
