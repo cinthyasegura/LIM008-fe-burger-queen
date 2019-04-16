@@ -29,7 +29,7 @@
         "category": "breakfast",
         "name": "Jugo de frutas natural",
         "price": 7,
-        "image": "../../image/juice.png" 
+        "image": "../image/juice.png" 
     },
     {
         "id": 5,
@@ -53,7 +53,7 @@
         "category": "menu",
         "name": "Hamburguesa simple de pollo",
         "price": 10,
-        "image": "../../image/chicken-hamburger.png",
+        "image": "../image/chicken-hamburger.png",
         "extra": {
             "queso": {
                 "price": 1
@@ -165,7 +165,7 @@
         "category": "drinks",
         "name": "Gaseosa 500ml",
         "price": 7,
-        "image": "../../image/soda.png" 
+        "image": "../image/soda.png" 
     },
     {
         "id": 16,
@@ -173,6 +173,6 @@
         "category": "drinks",
         "name": "Gaseosa 750ml",
         "price": 10,
-        "image": "../../image/soda.png"
+        "image": "../image/soda.png"
     }
 ]
