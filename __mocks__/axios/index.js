@@ -1,7 +1,7 @@
 // import menu from '../../src/data/menu.json';
 import { act } from 'react-testing-library';
 
-export default (url) => ({
+export default () => ({
   then : jest.fn((callback) => act(() => {
     callback({
       data: [

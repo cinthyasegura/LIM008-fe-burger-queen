@@ -7,13 +7,13 @@ const OrderSummary = ({
   orderItems, deleteItem, updateItem, addOrderToFirebase, updateInput, clientsName,
 }) => (
   <form onSubmit={addOrderToFirebase}>
-    <table>
+    <table className="table table-hover">
       <thead>
         <tr>
-          <th className="d-inline p-5">Cantidad</th>
-          <th className="d-inline p-5">Producto</th>
-          <th className="d-inline p-5">Precio</th>
-          <th className="d-inline">Eliminar</th>
+          <th>Cantidad</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody data-testid="productTable">
@@ -33,7 +33,7 @@ const OrderSummary = ({
                   {' '}
 +
                 </button>
-                <p>{item.quantity}</p>
+                {item.quantity}
                 <button
                   type="button"
                   onClick={() => {
@@ -49,8 +49,7 @@ const OrderSummary = ({
               </td>
               <td>{item.name}</td>
               <td>
-                <span>$</span>
-                {item.price * item.quantity}
+                {`$ ${item.price * item.quantity}`}
               </td>
               <td>
                 <button type="button" className="far fa-trash-alt pointer" onClick={() => deleteItem(item.id)} data-testid={`${index}-deleteItem-btn`} />
@@ -84,7 +83,7 @@ $
       value={clientsName}
       data-testid="client-input"
     />
-    <button className="rounded bg-info text-light" type="submit">Enviar a cocina</button>
+    <button className="rounded bg-info text-light" type="submit" data-testid="add-to-firebase">Enviar a cocina</button>
   </form>
 );
 

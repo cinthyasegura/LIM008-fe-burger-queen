@@ -7,11 +7,11 @@ const Product = ({
 }) => (
   <div className="media items">
     <img className="align-self-center ml-3 mr-8 icons" src={image} alt={name} />
-    <p className="mt-2">{name}</p>
-    <p className="ml-5">
+    <span className="mt-2">{name}</span>
+    <span>
 Precio: $
       {price}
-    </p>
+    </span>
     <button
       type="button"
       className="btn-add"

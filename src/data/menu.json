@@ -29,7 +29,7 @@
         "category": "breakfast",
         "name": "Jugo de frutas natural",
         "price": 7,
-        "image": "https://png.pngtree.com/element_pic/16/11/06/2b33d027f58168232370ded3025716f9.jpg" 
+        "image": "image/juice.png" 
     },
     {
         "id": 5,
@@ -53,7 +53,7 @@
         "category": "menu",
         "name": "Hamburguesa simple de pollo",
         "price": 10,
-        "image": "https://www.bembos.com.pe/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/h/a/hamburguesa-bembos-clasica.png",
+        "image": "image/chicken-hamburger.png",
         "extra": {
             "queso": {
                 "price": 1
@@ -165,7 +165,7 @@
         "category": "drinks",
         "name": "Gaseosa 500ml",
         "price": 7,
-        "image": "https://images.telepizza.com/vol/pe/images/content/productos/cn15_c.png" 
+        "image": "image/soda.png" 
     },
     {
         "id": 16,
@@ -173,6 +173,6 @@
         "category": "drinks",
         "name": "Gaseosa 750ml",
         "price": 10,
-        "image": "https://images.telepizza.com/vol/pe/images/content/productos/cn15_c.png"
+        "image": "image/soda.png"
     }
 ]
