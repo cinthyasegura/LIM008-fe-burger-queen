@@ -1,5 +1,4 @@
 import React from 'react';
-import './layout/layout.css';
 import Product from './Product';
 
 const ProductList = ({ menu, addOrderItem }) => (

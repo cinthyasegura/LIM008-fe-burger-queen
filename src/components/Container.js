@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import Tabs from './layout/Tabs';
 import ProductList from './ProductList';
 import OrderSummary from './OrderSummary';
+import './styles/container.css';
 
 const Container = () => {
   const [menu, setMenu] = useState([]);
@@ -50,16 +51,16 @@ const Container = () => {
   };
 
   return (
-    <div className="container">
+    <div className="">
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-6">
           <Tabs matchOption={matchOption} />
           <ProductList
             menu={menu.filter(item => item.category === options)}
             addOrderItem={addOrderItem}
           />
         </div>
-        <div className="col-md-6">
+        <div className="col-6 order">
           <OrderSummary
             orderItems={orderItems}
             deleteItem={deleteItem}

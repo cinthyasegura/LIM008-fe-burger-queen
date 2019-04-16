@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './layout/layout.css';
+import './styles/orderSummary.css';
 
 
 const OrderSummary = ({
@@ -30,7 +30,6 @@ const OrderSummary = ({
                   }}
                   data-testid={`${index}-updateItem-btn`}
                 >
-                  {' '}
 +
                 </button>
                 {item.quantity}
@@ -42,8 +41,7 @@ const OrderSummary = ({
                     updateItem(index, newItemToDecrease);
                   }}
                   data-testid={`${index}-updateDecreaseItem-btn`}
-                >
-                  {' '}
+                >                
 -
                 </button>
               </td>
@@ -68,7 +66,6 @@ const OrderSummary = ({
           <td>
 $
             {orderItems.reduce((acum, element) => acum + (element.quantity * element.price), 0)}
-            {' '}
 
           </td>
         </tr>
@@ -81,9 +78,10 @@ $
       placeholder="Nombre del cliente"
       onChange={updateInput}
       value={clientsName}
+      className="input"
       data-testid="client-input"
     />
-    <button className="rounded bg-info text-light" type="submit" data-testid="add-to-firebase">Enviar a cocina</button>
+    <button className="rounded bg text-light" type="submit" data-testid="add-to-firebase">Enviar a cocina</button>
   </form>
 );
 

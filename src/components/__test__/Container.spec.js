@@ -46,22 +46,20 @@ describe('Container', () => {
     productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(1);
   });
+  
   it('deberia eliminar productos del array de ordenes', async (done) => {
     const { getByTestId, queryAllByTestId } = render(<Container />);
-    let productTableItems = queryAllByTestId('productTableItem');
     const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
     await act(async () => {
       fireEvent.click(addOrderBtn);
       done();
     });
-    productTableItems = queryAllByTestId('productTableItem');
-    
     const deleteOrderBtn = await waitForElement(() => getByTestId('0-deleteItem-btn'));
     await act(async () => {
       fireEvent.click(deleteOrderBtn);
       done();
     });
-    productTableItems = queryAllByTestId('productTableItem');
+    let productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(0);
   });
 });
