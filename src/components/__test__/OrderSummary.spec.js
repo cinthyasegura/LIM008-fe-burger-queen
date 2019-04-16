@@ -68,4 +68,16 @@ describe('OrderSummary', () => {
     const descreaseItemBtn = getByTestId('0-updateDecreaseItem-btn');
     fireEvent.click(descreaseItemBtn);
   });
+  it('deberia no poder disminuir menos de 1 la cantidad de cada item', (done) => {
+    const updateItem = (index, item) => {
+      expect(index).toBe(0);
+      expect(item).toEqual({ id: 1, name: 'Café americano', quantity: 1 });
+      done();
+    };
+    const { getByTestId } = render(
+      <OrderSummary updateItem={updateItem} deleteItem={() => {}} clientsName="" orderItems={[{ id: 1, name: 'Café americano', quantity: 1 }]} addOrderToFirebase={() => {}} updateInput={() => {}} />,
+    );
+    const descreaseItemBtn = getByTestId('0-updateDecreaseItem-btn');
+    fireEvent.click(descreaseItemBtn);
+  });
 });
