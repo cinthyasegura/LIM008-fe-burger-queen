@@ -23,6 +23,7 @@ const OrderSummary = ({
               <td>
                 <button
                   type="button"
+                  className="fas fa-plus btn-none"
                   onClick={() => {
                     const newItemToAdd = { ...item };
                     newItemToAdd.quantity += 1;
@@ -30,19 +31,21 @@ const OrderSummary = ({
                   }}
                   data-testid={`${index}-updateItem-btn`}
                 >
-+
                 </button>
                 {item.quantity}
                 <button
                   type="button"
+                  className="fas fa-minus btn-none"
                   onClick={() => {
                     const newItemToDecrease = { ...item };
                     newItemToDecrease.quantity -= 1;
+                    if(newItemToDecrease.quantity < 1) {
+                      newItemToDecrease.quantity = 1;
+                    }
                     updateItem(index, newItemToDecrease);
                   }}
                   data-testid={`${index}-updateDecreaseItem-btn`}
-                >                
--
+                >    
                 </button>
               </td>
               <td>{item.name}</td>
@@ -50,7 +53,7 @@ const OrderSummary = ({
                 {`$ ${item.price * item.quantity}`}
               </td>
               <td>
-                <button type="button" className="far fa-trash-alt pointer" onClick={() => deleteItem(item.id)} data-testid={`${index}-deleteItem-btn`} />
+                <button type="button" className="far fa-trash-alt pointer btn-none" onClick={() => deleteItem(item.id)} data-testid={`${index}-deleteItem-btn`} />
               </td>
             </tr>
           ))

@@ -4,6 +4,23 @@ import OrderSummary from '../OrderSummary';
 
 afterEach(cleanup);
 
+
+const originalError = console.error
+beforeAll(() => {
+  console.error = (...args) => {
+    if (/Warning.*not wrapped in act/.test(args[0])) {
+      return
+    }
+    originalError.call(console, ...args)
+  }
+})
+
+afterAll(() => {
+  console.error = originalError
+})
+
+
+
 describe('OrderSummary', () => {
   it('updateInput', (done) => {
     const updateInput = (event) => {
@@ -11,7 +28,7 @@ describe('OrderSummary', () => {
       done();
     };
     const { getByTestId } = render(
-      <OrderSummary orderItems={[]} clientsName="customer original" updateInput={updateInput} />,
+      <OrderSummary orderItems={[]} updateItem={() => {}} deleteItem={() => {}} clientsName="customer original" updateInput={updateInput} addOrderToFirebase={() => {}}/>,
     );
     const input = getByTestId('client-input');
     fireEvent.change(input, { target: { value: 'customer nuevo' } });
@@ -22,7 +39,7 @@ describe('OrderSummary', () => {
       done();
     };
     const { getByTestId } = render(
-      <OrderSummary updateItem={() => {}} clientsName="" orderItems={[{ id: 2, name: 'Café con leche' }]} deleteItem={deleteItem} />,
+      <OrderSummary updateItem={() => {}} clientsName="" orderItems={[{ id: 2, name: 'Café con leche' }]} deleteItem={deleteItem} addOrderToFirebase={() => {}} updateInput={() => {}}/>,
     );
     const deleteItemBtn = getByTestId('0-deleteItem-btn');
     fireEvent.click(deleteItemBtn);
@@ -34,7 +51,7 @@ describe('OrderSummary', () => {
       done();
     };
     const { getByTestId } = render(
-      <OrderSummary updateItem={updateItem} clientsName="" orderItems={[{ id: 1, name: 'Café americano', quantity: 1 }]} />,
+      <OrderSummary updateItem={updateItem} deleteItem={() => {}} clientsName="" orderItems={[{ id: 1, name: 'Café americano', quantity: 1 }]} addOrderToFirebase={() => {}} updateInput={() => {}}/>,
     );
     const updateItemBtn = getByTestId('0-updateItem-btn');
     fireEvent.click(updateItemBtn);
@@ -46,7 +63,7 @@ describe('OrderSummary', () => {
       done();
     };
     const { getByTestId } = render(
-      <OrderSummary updateItem={updateItem} clientsName="" orderItems={[{ id: 1, name: 'Café americano', quantity: 2 }]} />,
+      <OrderSummary updateItem={updateItem} deleteItem={() => {}} clientsName="" orderItems={[{ id: 1, name: 'Café americano', quantity: 2 }]} addOrderToFirebase={() => {}} updateInput={() => {}} />,
     );
     const descreaseItemBtn = getByTestId('0-updateDecreaseItem-btn');
     fireEvent.click(descreaseItemBtn);

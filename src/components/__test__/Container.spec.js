@@ -7,6 +7,23 @@ import MockFirebase from 'mock-cloud-firestore';
 
 afterEach(cleanup);
 
+
+const originalError = console.error
+beforeAll(() => {
+  console.error = (...args) => {
+    if (/Warning.*not wrapped in act/.test(args[0])) {
+      return
+    }
+    originalError.call(console, ...args)
+  }
+})
+
+afterAll(() => {
+  console.error = originalError
+})
+
+
+
 const fixtureData = {
   __collection__: {
     users: {
@@ -31,15 +48,21 @@ const fixtureData = {
 
  global.firebase = new MockFirebase(fixtureData, {isNaiveSnapshotListenerEnabled: true});
   
+
+//  it('renders without crashing', () => {
+//   const div = document.createElement('div');
+//   ReactDOM.render(<Container />, div);
+//   ReactDOM.unmountComponentAtNode(div);
+// });
+
 describe('Container', () => {
   it('deberia aumentar la cantidad de productos en el array de ordenes', async (done) => {
     const { getByTestId, queryAllByTestId } = render(<Container />);
-
     let productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(0);
 
     const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
-    await act(async () => {
+     act(() => {
       fireEvent.click(addOrderBtn);
       done();
     });
@@ -50,16 +73,16 @@ describe('Container', () => {
   it('deberia eliminar productos del array de ordenes', async (done) => {
     const { getByTestId, queryAllByTestId } = render(<Container />);
     const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
-    await act(async () => {
+     act(() => {
       fireEvent.click(addOrderBtn);
       done();
     });
     const deleteOrderBtn = await waitForElement(() => getByTestId('0-deleteItem-btn'));
-    await act(async () => {
+     act(() => {
       fireEvent.click(deleteOrderBtn);
       done();
     });
-    let productTableItems = queryAllByTestId('productTableItem');
+    const productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(0);
   });
 });
@@ -102,28 +125,26 @@ describe('addOrderToFirebase', () => {
         callback(userData);
       });
     };
-    const { getByTestId, queryAllByTestId } = render(<Container />);
+    const { getByTestId } = render(<Container />);
     // let productTableItems = queryAllByTestId('productTableItem');
     const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
-    await act(async () => {
+    act(() => {
       fireEvent.click(addOrderBtn);
       done();
     });
     // productTableItems = queryAllByTestId('productTableItem');
     const btnAddOrderToFirebase = await waitForElement(() => getByTestId('add-to-firebase'));
-    await act(async () => {
+     act(() => {
       fireEvent.click(btnAddOrderToFirebase);
       done();
     });
     // productTableItems = queryAllByTestId('productTableItem');
     // expect(productTableItems).toHaveLength(0);
-
     const getData = (data) => {
       expect(data).toHaveLength(1);
       done();
     };
     getCollection(getData);
-    addOrderToFirebase();
   });
 });
 
