@@ -1,0 +1,18 @@
+.input {
+    margin-top: 55px;
+    margin-left: 20px;
+    margin-right: 25px;
+    width: 40%;
+    border: none;
+    border-bottom: 2px solid #8c8c8c;
+}
+.bg {
+    width: 40%;
+    background: #53bab8;
+    border-style: none;
+    font-size: 20px;
+}
+.btn-none {
+    border: none;
+    background-color: white;
+}

@@ -1,0 +1,178 @@
+[
+    {
+        "id": 1,
+        "quantity": 1,        
+        "category": "breakfast",
+        "name": "Café americano",
+        "price": 5,
+        "image": "http://www.prensa-latina.cu/images/2018/diciembre/08/1-lam-cafe.jpg"   
+    },
+    {
+        "id": 2,
+        "quantity": 1,        
+        "category": "breakfast",
+        "name": "Café con leche",
+        "price": 7,
+        "image": "https://banner2.kisspng.com/20180224/saq/kisspng-latte-coffee-espresso-ristretto-cappuccino-drinks-latte-5a915ca65077a8.5479297115194758783296.jpg" 
+    },
+    {
+        "id": 3,
+        "quantity": 1,        
+        "category": "breakfast",
+        "name": "Sandwich de jamón y queso",
+        "price": 10,
+        "image": "https://d701vexhkz032.cloudfront.net/media/images/menu-content/PE/desayunos/tostado-jamon-queso_new_pe.png"
+    },
+    {
+        "id": 4,
+        "quantity": 1,        
+        "category": "breakfast",
+        "name": "Jugo de frutas natural",
+        "price": 7,
+        "image": "http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c168.png" 
+    },
+    {
+        "id": 5,
+        "quantity": 1,        
+        "category": "menu",
+        "name": "Hamburguesa simple de res",
+        "price": 10,
+        "image": "https://www.bembos.com.pe/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/h/a/hamburguesa-bembos-clasica.png",
+        "extra": {
+            "queso": {
+                "price": 1
+            },
+            "huevo": {
+                "price": 1
+            }
+        }
+    },
+    {
+        "id": 6,
+        "quantity": 1,        
+        "category": "menu",
+        "name": "Hamburguesa simple de pollo",
+        "price": 10,
+        "image": "http://www.mcdonalds.com/content/dam/McDonalds/item/mcdonalds-Premium-Crispy-Chicken-Club-Sandwich.png",
+        "extra": {
+            "queso": {
+                "price": 1
+            },
+            "huevo": {
+                "price": 1
+            }
+        }
+    },
+    {
+        "id": 7,
+        "quantity": 1,       
+        "category": "menu",
+        "name": "Hamburguesa simple vegetariana",
+        "price": 10,
+        "image": "https://banner2.kisspng.com/20180331/ayq/kisspng-veggie-burger-vegetarian-cuisine-hamburger-cheese-burger-5abf7d1bde2f29.9520519015224988439101.jpg",
+        "extra": {
+            "queso": {
+                "price": 1
+            },
+            "huevo": {
+                "price": 1
+            }
+        }
+    },
+    {
+        "id": 8,
+        "quantity": 1,        
+        "category": "menu",
+        "name": "Hamburguesa doble de res",
+        "price": 15,
+        "image": "https://bakedpizza.com.co/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/h/a/hamburguesa_doble_carne_1.png",
+        "extra": {
+            "queso": {
+                "price": 1
+            },
+            "huevo": {
+                "price": 1
+            }
+        }
+    },
+    {
+        "id": 9,
+        "quantity": 1,        
+        "category": "menu",
+        "name": "Hamburguesa doble de pollo",
+        "price": 15,
+        "image": "https://bakedpizza.com.co/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/h/a/hamburguesa_doble_carne_1.png",
+        "extra": {
+            "queso": {
+                "price": 1
+            },
+            "huevo": {
+                "price": 1
+            }
+        }
+    },
+    {
+        "id": 10,
+        "quantity": 1,
+        "category": "menu",
+        "name": "Hamburguesa doble vegetariana",
+        "price": 15,
+        "image": "https://banner2.kisspng.com/20180331/ayq/kisspng-veggie-burger-vegetarian-cuisine-hamburger-cheese-burger-5abf7d1bde2f29.9520519015224988439101.jpg",
+        "extra": {
+            "queso": {
+                "price": 1
+            },
+            "huevo": {
+                "price": 1
+            }
+        }
+    },
+    {
+        "id": 11,
+        "quantity": 1,
+        "category": "accompaniment",
+        "name": "Papas fritas",
+        "price": 5,
+        "image": "https://banner2.kisspng.com/20180420/dle/kisspng-french-fries-church-s-chicken-cheese-fries-chili-c-fried-potatoes-5ada461090a782.3788167415242542245925.jpg"  
+    },
+    {
+        "id": 12,
+        "quantity": 1,
+        "category": "accompaniment",
+        "name": "Aros de cebolla",
+        "price": 5,
+        "image": "https://banner2.kisspng.com/20180703/cvv/kisspng-french-fries-onion-ring-junk-food-hamburger-buffal-onion-rings-5b3b3064dba625.9659127715306056688997.jpg" 
+    },
+    {
+        "id": 13,
+        "quantity": 1,
+        "category": "drinks",
+        "name": "Agua 500ml",
+        "price": 5,
+        "image": "https://www.tiptoprestaurantes.com/content/images/thumbs/0000184_agua-botella_480.png" 
+    },
+    {
+        "id": 14,
+        "quantity": 1,
+        "category": "drinks",
+        "name": "Agua 750ml",
+        "price": 7,
+        "image": "https://www.tiptoprestaurantes.com/content/images/thumbs/0000184_agua-botella_480.png"
+    },
+    {
+        "id": 15,
+        "quantity": 1,
+        "category": "drinks",
+        "name": "Gaseosa 500ml",
+        "price": 7,
+        "image": "https://beverageuniverse.com/images/cherry-coke-zero-2L.gif" 
+    },
+    {
+        "id": 16,
+        "quantity": 1,
+        "category": "drinks",
+        "name": "Gaseosa 750ml",
+        "price": 10,
+        "image": "https://beverageuniverse.com/images/cherry-coke-zero-2L.gif"
+    }
+]
