@@ -53,7 +53,7 @@
         "category": "menu",
         "name": "Hamburguesa simple de pollo",
         "price": 10,
-        "image": "../image/chicken-hamburger.png",
+        "image": "C:/Users/Cinthya/Documents/burger-queen/LIM008-fe-burger-queen/src/image/chicken-hamburger.png",
         "extra": {
             "queso": {
                 "price": 1
