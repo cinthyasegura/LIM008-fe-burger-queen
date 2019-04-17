@@ -5,24 +5,6 @@ import Container from '../Container';
 import addOrderToFirebase from '../Container';
 import MockFirebase from 'mock-cloud-firestore';
 
-afterEach(cleanup);
-
-
-const originalError = console.error
-beforeAll(() => {
-  console.error = (...args) => {
-    if (/Warning.*not wrapped in act/.test(args[0])) {
-      return
-    }
-    originalError.call(console, ...args)
-  }
-})
-
-afterAll(() => {
-  console.error = originalError
-})
-
-
 
 const fixtureData = {
   __collection__: {
@@ -56,33 +38,26 @@ const fixtureData = {
 // });
 
 describe('Container', () => {
-  it('deberia aumentar la cantidad de productos en el array de ordenes', async (done) => {
+  afterEach(cleanup);
+
+  it('deberia poder agregar y eliminar productos del array de ordenes', async () => {
     const { getByTestId, queryAllByTestId } = render(<Container />);
+
     let productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(0);
 
     const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
-     act(() => {
+    await act(async () => {
       fireEvent.click(addOrderBtn);
-      done();
     });
     productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(1);
-  });
-  
-  it('deberia eliminar productos del array de ordenes', async (done) => {
-    const { getByTestId, queryAllByTestId } = render(<Container />);
-    const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
-     act(() => {
-      fireEvent.click(addOrderBtn);
-      done();
-    });
+
     const deleteOrderBtn = await waitForElement(() => getByTestId('0-deleteItem-btn'));
-     act(() => {
+    await act(async () => {
       fireEvent.click(deleteOrderBtn);
-      done();
     });
-    const productTableItems = queryAllByTestId('productTableItem');
+    productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(0);
   });
 });
