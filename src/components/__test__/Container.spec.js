@@ -51,7 +51,7 @@ const fixtureData = {
 
 //  it('renders without crashing', () => {
 //   const div = document.createElement('div');
-//   ReactDOM.render(<Container />, div);
+//   ReactDOM.render(<Container />, div); 
 //   ReactDOM.unmountComponentAtNode(div);
 // });
 
@@ -110,41 +110,41 @@ describe('Container', () => {
 
 
 
-describe('addOrderToFirebase', () => {
-  it('deberia poder agregar una orden a firebase', async (done) => {
-    const getCollection = (callback) => {
-      const db = firebase.firestore();
-      db.collection('users').onSnapshot(querySnapshot => {
-        const userData = [];
-        querySnapshot.forEach(doc => {
-          userData.push({ 
-            id: doc.id,
-            ...doc.data(), 
-          });
-        });
-        callback(userData);
-      });
-    };
-    const { getByTestId } = render(<Container />);
-    // let productTableItems = queryAllByTestId('productTableItem');
-    const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
-    act(() => {
-      fireEvent.click(addOrderBtn);
-      done();
-    });
-    // productTableItems = queryAllByTestId('productTableItem');
-    const btnAddOrderToFirebase = await waitForElement(() => getByTestId('add-to-firebase'));
-     act(() => {
-      fireEvent.click(btnAddOrderToFirebase);
-      done();
-    });
-    // productTableItems = queryAllByTestId('productTableItem');
-    // expect(productTableItems).toHaveLength(0);
-    const getData = (data) => {
-      expect(data).toHaveLength(1);
-      done();
-    };
-    getCollection(getData);
-  });
-});
+// describe('addOrderToFirebase', () => {
+//   it('deberia poder agregar una orden a firebase', async (done) => {
+//     const getCollection = (callback) => {
+//       const db = firebase.firestore();
+//       db.collection('users').onSnapshot(querySnapshot => {
+//         const userData = [];
+//         querySnapshot.forEach(doc => {
+//           userData.push({ 
+//             id: doc.id,
+//             ...doc.data(), 
+//           });
+//         });
+//         callback(userData);
+//       });
+//     };
+//     const { getByTestId } = render(<Container />);
+//     // let productTableItems = queryAllByTestId('productTableItem');
+//     const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
+//     act(() => {
+//       fireEvent.click(addOrderBtn);
+//       done();
+//     });
+//     // productTableItems = queryAllByTestId('productTableItem');
+//     const btnAddOrderToFirebase = await waitForElement(() => getByTestId('add-to-firebase'));
+//      act(() => {
+//       fireEvent.click(btnAddOrderToFirebase);
+//       done();
+//     });
+//     // productTableItems = queryAllByTestId('productTableItem');
+//     // expect(productTableItems).toHaveLength(0);
+//     const getData = (data) => {
+//       expect(data).toHaveLength(1);
+//       done();
+//     };
+//     getCollection(getData);
+//   });
+// });
 
