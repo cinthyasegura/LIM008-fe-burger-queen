@@ -21,7 +21,9 @@ const Container = () => {
     fetchDta();
   }, []);
 
-  const matchOption = (option) => setOptions(option);
+  const matchOption = (option) => {
+    setOptions(option);
+  };
 
   const addOrderItem = id => menu.filter(item => (item.id === id ? setOrderItems([...orderItems, item]) : ''));
 
