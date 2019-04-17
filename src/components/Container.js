@@ -15,22 +15,17 @@ const Container = () => {
   useEffect(() => {
     async function fetchDta() {
       const result = await axios('https://raw.githubusercontent.com/cinthyasegura/LIM008-fe-burger-queen/firstHistory/src/data/menu.json');
-      setMenu([...result.data, menu]);
+      setMenu([...result.data]);
       setOptions('breakfast');
     }
     fetchDta();
   }, []);
 
-  const matchOption = (option) => {
-    setOptions(option);
-  };
+  const matchOption = (option) => setOptions(option);
 
   const addOrderItem = id => menu.filter(item => (item.id === id ? setOrderItems([...orderItems, item]) : ''));
 
-
-  const deleteItem = (id) => {
-    setOrderItems(orderItems.filter(item => item.id !== id));
-  };
+  const deleteItem = (id) => setOrderItems(orderItems.filter(item => item.id !== id));
 
   const updateItem = (index, item) => {
     const newItems = [...orderItems];
@@ -45,7 +40,11 @@ const Container = () => {
   const addOrderToFirebase = (e) => {
     e.preventDefault();
     const db = firebase.firestore();
-    db.collection('users').add({ clientsName, orderItems });
+    db.collection('users').add({ 
+      clientsName,
+      orderItems,
+      date: firebase.firestore.FieldValue.serverTimestamp()
+    });
     setClientsName('');
     setOrderItems([]);
   };
