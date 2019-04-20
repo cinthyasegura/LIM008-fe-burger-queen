@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/LIM008-fe-burger-queen/static/css/main.8dd31a2a.chunk.css"
   },
   {
-    "revision": "191282f1cae04a463ed43f989f9f80e7",
+    "revision": "a4b1f5fcc938f9283e09b89618d7e438",
     "url": "/LIM008-fe-burger-queen/index.html"
   }
 ];
