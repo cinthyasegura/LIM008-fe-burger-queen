@@ -73,9 +73,7 @@ $
           </td>
         </tr>
       </tfoot>
-    </table>
-
-    <label htmlFor="name"></label>      
+    </table>   
       <input
         type="text"
         name="name"
