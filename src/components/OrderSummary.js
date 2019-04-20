@@ -75,15 +75,17 @@ $
       </tfoot>
     </table>
 
-    <input
-      type="text"
-      name="name"
-      placeholder="Nombre del cliente"
-      onChange={updateInput}
-      value={clientsName}
-      className="input"
-      data-testid="client-input"
-    />
+    <label htmlFor="name"></label>      
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Nombre del cliente"
+        onChange={updateInput}
+        value={clientsName}
+        className="input"
+        data-testid="client-input"
+      />
     <button className="rounded bg text-light" type="submit" data-testid="add-to-firebase">Enviar a cocina</button>
   </form>
 );

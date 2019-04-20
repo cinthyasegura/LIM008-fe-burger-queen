@@ -27,7 +27,7 @@ const Container = () => {
 
   const addOrderItem = id => menu.filter(item => (item.id === id ? setOrderItems([...orderItems, item]) : ''));
 
-  const deleteItem = (id) => setOrderItems(orderItems.filter(item => item.id !== id));
+  const deleteItem = id => setOrderItems(orderItems.filter(item => item.id !== id));
 
   const updateItem = (index, item) => {
     const newItems = [...orderItems];
@@ -52,25 +52,23 @@ const Container = () => {
   };
 
   return (
-    <div className="">
-      <div className="row">
-        <div className="col-6">
-          <Tabs matchOption={matchOption} />
-          <ProductList
-            menu={menu.filter(item => item.category === options)}
-            addOrderItem={addOrderItem}
-          />
-        </div>
-        <div className="col-6 order">
-          <OrderSummary
-            orderItems={orderItems}
-            deleteItem={deleteItem}
-            updateItem={updateItem}
-            addOrderToFirebase={addOrderToFirebase}
-            updateInput={updateInput}
-            clientsName={clientsName}
-          />
-        </div>
+    <div className="row">
+      <div className="col-md-6">
+        <Tabs matchOption={matchOption} />
+        <ProductList
+          menu={menu.filter(item => item.category === options)}
+          addOrderItem={addOrderItem}
+        />
+      </div>
+      <div className="col-md-6 order">
+        <OrderSummary
+          orderItems={orderItems}
+          deleteItem={deleteItem}
+          updateItem={updateItem}
+          addOrderToFirebase={addOrderToFirebase}
+          updateInput={updateInput}
+          clientsName={clientsName}
+        />
       </div>
     </div>
   );

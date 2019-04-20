@@ -5,7 +5,7 @@
         "category": "breakfast",
         "name": "Café americano",
         "price": 5,
-        "image": "http://www.prensa-latina.cu/images/2018/diciembre/08/1-lam-cafe.jpg"   
+        "image": "https://img2.gratispng.com/20180701/izh/kisspng-coffee-caff-americano-cafe-espresso-ristretto-5b38d4375102d5.9059141515304509993318.jpg"   
     },
     {
         "id": 2,
@@ -29,7 +29,7 @@
         "category": "breakfast",
         "name": "Jugo de frutas natural",
         "price": 7,
-        "image": "http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c168.png" 
+        "image": "https://authoritynutrition.com/wp-content/uploads/2013/10/orange-juice.jpg" 
     },
     {
         "id": 5,

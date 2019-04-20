@@ -11,13 +11,13 @@ const Product = ({
       {name} < br/>
       Precio: $ {price}
     </span>
-    <button
-      type="button"
+    <span
+      role="presentation"
       className="btn-add fas fa-plus"
       onClick={addOrder}
       data-testid={`${id}-addOrderItem-btn`}
     >
-    </button>
+    </span>
   </div>
 );
 

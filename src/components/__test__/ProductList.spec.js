@@ -15,6 +15,5 @@ describe('ProductList', () => {
     );
     const addOrderBtn = getByTestId('1-addOrderItem-btn');
     fireEvent.click(addOrderBtn);
-  });
-  
+  }); 
 });
