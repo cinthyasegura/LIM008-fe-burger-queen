@@ -5,7 +5,7 @@
         "category": "breakfast",
         "name": "Café americano",
         "price": 5,
-        "image": "public/image/coffee.jpg"   
+        "image": "image/coffee.jpg"   
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "category": "breakfast",
         "name": "Café con leche",
         "price": 7,
-        "image": "public/image/coffee-milk.jpg" 
+        "image": "image/coffee-milk.jpg" 
     },
     {
         "id": 3,
