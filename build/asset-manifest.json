@@ -9,7 +9,5 @@
   "index.html": "/LIM008-fe-burger-queen/index.html",
   "precache-manifest.a0259ef652e8af00b8873c1aeba70010.js": "/LIM008-fe-burger-queen/precache-manifest.a0259ef652e8af00b8873c1aeba70010.js",
   "service-worker.js": "/LIM008-fe-burger-queen/service-worker.js",
-  "static/css/main.3c9ceb39.chunk.css.map": "/LIM008-fe-burger-queen/static/css/main.3c9ceb39.chunk.css.map",
-  "https://d701vexhkz032.cloudfront.net/media/images/menu-content/PE/desayunos/tostado-jamon-queso_new_pe.png": "https://d701vexhkz032.cloudfront.net/media/images/menu-content/PE/desayunos/tostado-jamon-queso_new_pe.png",
-  "https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-6cfe9edf1b8363c705dc166f61068e78.png": "https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-6cfe9edf1b8363c705dc166f61068e78.png" 
+  "static/css/main.3c9ceb39.chunk.css.map": "/LIM008-fe-burger-queen/static/css/main.3c9ceb39.chunk.css.map"
 }

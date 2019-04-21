@@ -21,7 +21,7 @@
         "category": "breakfast",
         "name": "Sandwich de jamón y queso",
         "price": 10,
-        "image": "image/sandwich.png"
+        "image": "public/image/sandwich.png"
     },
     {
         "id": 4,
