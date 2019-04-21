@@ -21,7 +21,7 @@
         "category": "breakfast",
         "name": "Sandwich de jamón y queso",
         "price": 10,
-        "image": "https://d701vexhkz032.cloudfront.net/media/images/menu-content/PE/desayunos/tostado-jamon-queso_new_pe.png"
+        "image": "image/sandwich.png"
     },
     {
         "id": 4,
