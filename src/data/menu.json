@@ -117,7 +117,7 @@
         "category": "menu",
         "name": "Hamburguesa doble vegetariana",
         "price": 15,
-        "image": "image/hamburger3.png",
+        "image": "image/hamburger3.jpg",
         "extra": {
             "queso": {
                 "price": 1
