@@ -5,7 +5,7 @@
         "category": "breakfast",
         "name": "Café americano",
         "price": 5,
-        "image": "https://www.prensa-latina.cu/images/2018/diciembre/08/1-lam-cafe.jpg"   
+        "image": "../../build/static/image/cafe.jpg"   
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "category": "breakfast",
         "name": "Café con leche",
         "price": 7,
-        "image": "https://banner2.kisspng.com/20180224/saq/kisspng-latte-coffee-espresso-ristretto-cappuccino-drinks-latte-5a915ca65077a8.5479297115194758783296.jpg" 
+        "image": "../../build/static/image/cafe-leche.jpg" 
     },
     {
         "id": 3,
