@@ -24,8 +24,13 @@ const Container = () => {
   const matchOption = (option) => {
     setOptions(option);
   };
-
-  const addOrderItem = id => menu.filter(item => (item.id === id ? setOrderItems([...orderItems, item]) : ''));
+ 
+  const addOrderItem = (orderArr, orderList) => {
+    const elementMatch = orderArr.find(item => item.id === orderList.id);
+    return elementMatch 
+      ? (orderList.quantity += 1, setOrderItems([...orderItems])) 
+      : setOrderItems([...orderItems, orderList])
+  };
 
   const deleteItem = id => setOrderItems(orderItems.filter(item => item.id !== id));
 
@@ -58,6 +63,7 @@ const Container = () => {
         <ProductList
           menu={menu.filter(item => item.category === options)}
           addOrderItem={addOrderItem}
+          orderItems={orderItems}
         />
       </div>
       <div className="col-md-6 order">
