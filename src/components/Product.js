@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles/menu.css';
+import '../App.css';
 
 const Product = ({
   name, image, price, addOrder, id,
@@ -11,13 +11,14 @@ const Product = ({
       {name} < br/>
       Precio: $ {price}
     </span>
-    <span
+    <img
+      alt="agregar orden"
+      src="image/mas.png"
       role="presentation"
-      className="btn-add fas fa-plus"
+      className="btn-add"
       onClick={addOrder}
       data-testid={`${id}-addOrderItem-btn`}
-    >
-    </span>
+    />
   </div>
 );
 

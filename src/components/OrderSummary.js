@@ -21,21 +21,22 @@ const OrderSummary = ({
           orderItems.map((item, index) => (
             <tr key={item.id} data-testid="productTableItem">
               <td>
-                <button
-                  type="button"
-                  className="fas fa-plus btn-none"
+                <img
+                  src="image/mas1.png"
+                  alt="aumentar"
+                  className="btn-none add"
                   onClick={() => {
                     const newItemToAdd = { ...item };
                     newItemToAdd.quantity += 1;
                     updateItem(index, newItemToAdd);
                   }}
                   data-testid={`${index}-updateItem-btn`}
-                >
-                </button>
+                />
                 {item.quantity}
-                <button
-                  type="button"
-                  className="fas fa-minus btn-none"
+                <img
+                  src="image/menos-simbolo.png"
+                  alt="disminuir"
+                  className="btn-none minus"
                   onClick={() => {
                     const newItemToDecrease = { ...item };
                     newItemToDecrease.quantity -= 1;
@@ -45,15 +46,14 @@ const OrderSummary = ({
                     updateItem(index, newItemToDecrease);
                   }}
                   data-testid={`${index}-updateDecreaseItem-btn`}
-                >    
-                </button>
+                /> 
               </td>
               <td>{item.name}</td>
               <td>
                 {`$ ${item.price * item.quantity}`}
               </td>
               <td>
-                <button type="button" className="far fa-trash-alt pointer btn-none" onClick={() => deleteItem(item.id)} data-testid={`${index}-deleteItem-btn`} />
+                <img  src="image/basura.png" alt="eliminar" className="pointer btn-none" onClick={() => deleteItem(item.id)} data-testid={`${index}-deleteItem-btn`} />
               </td>
             </tr>
           ))
@@ -73,11 +73,12 @@ $
           </td>
         </tr>
       </tfoot>
-    </table>   
+    </table> 
+      <label htmlFor="client"></label>
       <input
         type="text"
-        name="name"
-        id="name"
+        name="client"
+        id="client"
         placeholder="Nombre del cliente"
         onChange={updateInput}
         value={clientsName}

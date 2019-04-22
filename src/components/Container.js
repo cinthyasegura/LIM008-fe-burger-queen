@@ -4,7 +4,7 @@ import firebase from '../firebase';
 import Tabs from './layout/Tabs';
 import ProductList from './ProductList';
 import OrderSummary from './OrderSummary';
-import './styles/container.css';
+import '../App.css';
 
 const Container = () => {
   const [menu, setMenu] = useState([]);

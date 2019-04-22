@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/menu.css';
+import '../../App.css';
 
 const Tabs = ({ matchOption }) => (
   <div className="list-group list-group-horizontal-sm text-center ">

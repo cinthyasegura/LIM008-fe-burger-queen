@@ -8,11 +8,18 @@
 }
 .bg {
     width: 40%;
-    background: #53bab8;
+    background: #E60023;
     border-style: none;
     font-size: 20px;
 }
 .btn-none {
     border: none;
-    background-color: white;
+    width: 16px;
+    height: auto;
+}
+.add {
+    padding-right: 5px;
+}
+.minus {
+    padding-left: 6px;
 }
