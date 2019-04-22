@@ -1,0 +1,19 @@
+.header {
+    background: #43414C;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+.pointer {
+    cursor: pointer;
+}
+.tittle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 52px;
+}
+
+@media (max-width: 420px) {
+    .secondary{
+        font-size: 16px;
+    }
+}

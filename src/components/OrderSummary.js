@@ -10,10 +10,10 @@ const OrderSummary = ({
     <table className="table table-hover">
       <thead>
         <tr>
-          <th>Cantidad</th>
-          <th>Producto</th>
-          <th>Precio</th>
-          <th>Eliminar</th>
+          <th className="tb-header">Cantidad</th>
+          <th className="tb-header">Producto</th>
+          <th className="tb-header">Precio</th>
+          <th className="tb-header">Eliminar</th>
         </tr>
       </thead>
       <tbody data-testid="productTable">
@@ -65,7 +65,7 @@ const OrderSummary = ({
       </tbody>
       <tfoot>
         <tr>
-          <th colSpan="3">Total:</th>
+          <th colSpan="2">Total:</th>
           <td>
 $
             {orderItems.reduce((acum, element) => acum + (element.quantity * element.price), 0)}
