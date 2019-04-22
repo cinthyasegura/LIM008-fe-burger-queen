@@ -37,15 +37,7 @@
         "category": "menu",
         "name": "Hamburguesa simple de res",
         "price": 10,
-        "image": "image/hamburger1.webp",
-        "extra": {
-            "queso": {
-                "price": 1
-            },
-            "huevo": {
-                "price": 1
-            }
-        }
+        "image": "image/hamburger1.webp"
     },
     {
         "id": 6,
@@ -53,15 +45,7 @@
         "category": "menu",
         "name": "Hamburguesa simple de pollo",
         "price": 10,
-        "image": "image/hamburger2.webp",
-        "extra": {
-            "queso": {
-                "price": 1
-            },
-            "huevo": {
-                "price": 1
-            }
-        }
+        "image": "image/hamburger2.webp"
     },
     {
         "id": 7,
@@ -69,15 +53,7 @@
         "category": "menu",
         "name": "Hamburguesa simple vegetariana",
         "price": 10,
-        "image": "image/hamburger3.webp",
-        "extra": {
-            "queso": {
-                "price": 1
-            },
-            "huevo": {
-                "price": 1
-            }
-        }
+        "image": "image/hamburger3.webp"
     },
     {
         "id": 8,
@@ -85,15 +61,7 @@
         "category": "menu",
         "name": "Hamburguesa doble de res",
         "price": 15,
-        "image": "image/hamburger4.webp",
-        "extra": {
-            "queso": {
-                "price": 1
-            },
-            "huevo": {
-                "price": 1
-            }
-        }
+        "image": "image/hamburger4.webp"
     },
     {
         "id": 9,
@@ -101,15 +69,7 @@
         "category": "menu",
         "name": "Hamburguesa doble de pollo",
         "price": 15,
-        "image": "image/hamburger4.webp",
-        "extra": {
-            "queso": {
-                "price": 1
-            },
-            "huevo": {
-                "price": 1
-            }
-        }
+        "image": "image/hamburger4.webp"
     },
     {
         "id": 10,
@@ -117,15 +77,7 @@
         "category": "menu",
         "name": "Hamburguesa doble vegetariana",
         "price": 15,
-        "image": "image/hamburger3.webp",
-        "extra": {
-            "queso": {
-                "price": 1
-            },
-            "huevo": {
-                "price": 1
-            }
-        }
+        "image": "image/hamburger3.webp"
     },
     {
         "id": 11,
@@ -174,5 +126,21 @@
         "name": "Gaseosa 750ml",
         "price": 10,
         "image": "image/soda.webp"
+    },
+    {
+        "id": 17,
+        "quantity": 1,
+        "category": "accompaniment",
+        "name": "Queso",
+        "price": 1,
+        "image": "image/cheese.webp" 
+    },
+    {
+        "id": 18,
+        "quantity": 1,
+        "category": "accompaniment",
+        "name": "Huevo",
+        "price": 1,
+        "image": "image/egg.webp" 
     }
 ]
