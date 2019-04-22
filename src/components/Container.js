@@ -29,7 +29,7 @@ const Container = () => {
     const elementMatch = orderArr.find(item => item.id === orderList.id);
     return elementMatch 
       ? (orderList.quantity += 1, setOrderItems([...orderItems])) 
-      : setOrderItems([...orderItems, orderList])
+      : setOrderItems([...orderItems, orderList]) 
   };
 
   const deleteItem = id => setOrderItems(orderItems.filter(item => item.id !== id));
