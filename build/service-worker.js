@@ -29,6 +29,7 @@ workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute("/LIM008-fe-burger-queen/index.html", {
+
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
