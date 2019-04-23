@@ -14,7 +14,7 @@ const Container = () => {
 
   useEffect(() => {
     async function fetchDta() {
-      const result = await axios('https://raw.githubusercontent.com/cinthyasegura/LIM008-fe-burger-queen/firstHistory/src/data/menu.json');
+      const result = await axios('https://raw.githubusercontent.com/cinthyasegura/LIM008-fe-burger-queen/firstStory/src/data/menu.json');
       setMenu([...result.data]);
       setOptions('breakfast');
     }
