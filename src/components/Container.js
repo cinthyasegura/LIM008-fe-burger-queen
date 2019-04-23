@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import firebase from 'firebase';
+import firebase from '../firebase';
 import Tabs from './layout/Tabs';
 import ProductList from './ProductList';
 import OrderSummary from './OrderSummary';
-import './styles/container.css';
+import '../App.css';
 
 const Container = () => {
   const [menu, setMenu] = useState([]);
@@ -15,7 +15,7 @@ const Container = () => {
   useEffect(() => {
     async function fetchDta() {
       const result = await axios('https://raw.githubusercontent.com/cinthyasegura/LIM008-fe-burger-queen/firstHistory/src/data/menu.json');
-      setMenu([...result.data, menu]);
+      setMenu([...result.data]);
       setOptions('breakfast');
     }
     fetchDta();
@@ -24,12 +24,17 @@ const Container = () => {
   const matchOption = (option) => {
     setOptions(option);
   };
+ 
+  const addOrderItem = (orderArr, orderList) => {
+    const elementMatch = orderArr.find(item => item.id === orderList.id);
+    return elementMatch 
+      ? (orderList.quantity += 1, setOrderItems([...orderItems])) 
+      : setOrderItems([...orderItems, orderList]) 
+  };
 
-  const addOrderItem = id => menu.filter(item => (item.id === id ? setOrderItems([...orderItems, item]) : ''));
-
-
-  const deleteItem = (id) => {
+  const deleteItem = id => {
     setOrderItems(orderItems.filter(item => item.id !== id));
+    
   };
 
   const updateItem = (index, item) => {
@@ -45,31 +50,34 @@ const Container = () => {
   const addOrderToFirebase = (e) => {
     e.preventDefault();
     const db = firebase.firestore();
-    db.collection('users').add({ clientsName, orderItems });
+    db.collection('users').add({ 
+      clientsName,
+      orderItems,
+      date: firebase.firestore.FieldValue.serverTimestamp()
+    });
     setClientsName('');
     setOrderItems([]);
   };
 
   return (
-    <div className="">
-      <div className="row">
-        <div className="col-6">
-          <Tabs matchOption={matchOption} />
-          <ProductList
-            menu={menu.filter(item => item.category === options)}
-            addOrderItem={addOrderItem}
-          />
-        </div>
-        <div className="col-6 order">
-          <OrderSummary
-            orderItems={orderItems}
-            deleteItem={deleteItem}
-            updateItem={updateItem}
-            addOrderToFirebase={addOrderToFirebase}
-            updateInput={updateInput}
-            clientsName={clientsName}
-          />
-        </div>
+    <div className="row">
+      <div className="col-md-6">
+        <Tabs matchOption={matchOption} />
+        <ProductList
+          menu={menu.filter(item => item.category === options)}
+          addOrderItem={addOrderItem}
+          orderItems={orderItems}
+        />
+      </div>
+      <div className="col-md-6 order">
+        <OrderSummary
+          orderItems={orderItems}
+          deleteItem={deleteItem}
+          updateItem={updateItem}
+          addOrderToFirebase={addOrderToFirebase}
+          updateInput={updateInput}
+          clientsName={clientsName}
+        />
       </div>
     </div>
   );

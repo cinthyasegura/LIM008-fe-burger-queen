@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.7a8fbc0f7673df46d243b88ddf404d0c.js"
+  "/LIM008-fe-burger-queen/precache-manifest.9fddb3d8b52d373f7f257b55d4724792.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,8 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/index.html", {
+workbox.routing.registerNavigationRoute("/LIM008-fe-burger-queen/index.html", {
+
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

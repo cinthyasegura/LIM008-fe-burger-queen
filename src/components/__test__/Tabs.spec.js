@@ -4,22 +4,6 @@ import Tabs from '../layout/Tabs';
 
 afterEach(cleanup);
 
-const originalError = console.error
-beforeAll(() => {
-  console.error = (...args) => {
-    if (/Warning.*not wrapped in act/.test(args[0])) {
-      return
-    }
-    originalError.call(console, ...args)
-  }
-})
-
-afterAll(() => {
-  console.error = originalError
-})
-
-
-
 describe('Tabs', () => {
   it('deberia poder filtrar los productos de desayuno', (done) => {
     const matchOption = (option) => {
