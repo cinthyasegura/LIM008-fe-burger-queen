@@ -1,4 +1,3 @@
-// import menu from '../../src/data/menu.json';
 import { act } from 'react-testing-library';
 
 export default () => ({

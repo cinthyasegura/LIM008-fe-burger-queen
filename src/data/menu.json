@@ -5,7 +5,7 @@
         "category": "breakfast",
         "name": "Café americano",
         "price": 5,
-        "image": "image/coffee.webp"   
+        "image": "image/coffee.jpg"   
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "category": "breakfast",
         "name": "Café con leche",
         "price": 7,
-        "image": "image/coffee-milk.webp" 
+        "image": "image/coffee-milk.jpg" 
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "category": "breakfast",
         "name": "Sandwich de jamón y queso",
         "price": 10,
-        "image": "image/sandwich.webp"
+        "image": "image/sandwich.png"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "category": "breakfast",
         "name": "Jugo de frutas natural",
         "price": 7,
-        "image": "image/juice.webp" 
+        "image": "image/juice.png" 
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "category": "menu",
         "name": "Hamburguesa simple de res",
         "price": 10,
-        "image": "image/hamburger1.webp"
+        "image": "image/hamburger1.png"
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "category": "menu",
         "name": "Hamburguesa simple de pollo",
         "price": 10,
-        "image": "image/hamburger2.webp"
+        "image": "image/hamburger2.png"
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "category": "menu",
         "name": "Hamburguesa simple vegetariana",
         "price": 10,
-        "image": "image/hamburger3.webp"
+        "image": "image/hamburger3.jpg"
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "category": "menu",
         "name": "Hamburguesa doble de res",
         "price": 15,
-        "image": "image/hamburger4.webp"
+        "image": "image/hamburger4.png"
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@
         "category": "menu",
         "name": "Hamburguesa doble de pollo",
         "price": 15,
-        "image": "image/hamburger4.webp"
+        "image": "image/hamburger4.png"
     },
     {
         "id": 10,
@@ -77,7 +77,7 @@
         "category": "menu",
         "name": "Hamburguesa doble vegetariana",
         "price": 15,
-        "image": "image/hamburger3.webp"
+        "image": "image/hamburger3.jpg"
     },
     {
         "id": 11,
@@ -85,7 +85,7 @@
         "category": "accompaniment",
         "name": "Papas fritas",
         "price": 5,
-        "image": "image/fries.webp"  
+        "image": "image/fries.jpg"  
     },
     {
         "id": 12,
@@ -93,7 +93,7 @@
         "category": "accompaniment",
         "name": "Aros de cebolla",
         "price": 5,
-        "image": "image/onion-rings.webp" 
+        "image": "image/onion-rings.jpg" 
     },
     {
         "id": 13,
@@ -101,7 +101,7 @@
         "category": "drinks",
         "name": "Agua 500ml",
         "price": 5,
-        "image": "image/water.webp" 
+        "image": "image/water.png" 
     },
     {
         "id": 14,
@@ -109,7 +109,7 @@
         "category": "drinks",
         "name": "Agua 750ml",
         "price": 7,
-        "image": "image/water.webp"
+        "image": "image/water.png"
     },
     {
         "id": 15,
@@ -117,7 +117,7 @@
         "category": "drinks",
         "name": "Gaseosa 500ml",
         "price": 7,
-        "image": "image/soda.webp" 
+        "image": "image/soda.gif" 
     },
     {
         "id": 16,
@@ -125,7 +125,7 @@
         "category": "drinks",
         "name": "Gaseosa 750ml",
         "price": 10,
-        "image": "image/soda.webp"
+        "image": "image/soda.gif"
     },
     {
         "id": 17,
@@ -133,7 +133,7 @@
         "category": "accompaniment",
         "name": "Queso",
         "price": 1,
-        "image": "image/cheese.webp" 
+        "image": "image/cheese.png" 
     },
     {
         "id": 18,
@@ -141,6 +141,6 @@
         "category": "accompaniment",
         "name": "Huevo",
         "price": 1,
-        "image": "image/egg.webp" 
+        "image": "image/egg.jpg" 
     }
 ]
