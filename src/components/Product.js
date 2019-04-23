@@ -5,7 +5,7 @@ import '../App.css';
 const Product = ({
   name, image, price, addOrder, id,
 }) => (
-  <div className="media items">
+  <div className="media items" data-testid="product-list">
     <img className="align-self-center ml-3 mr-8 icons" src={image} alt={name} />
     <span className="padding mt-2">
       {name} < br/>

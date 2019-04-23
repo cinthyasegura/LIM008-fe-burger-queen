@@ -1,5 +1,6 @@
 import React from 'react';
 import { cleanup, render, fireEvent, waitForElement, act } from 'react-testing-library';
+import { getByText } from 'dom-testing-library';
 import Container from '../Container';
 import MockFirebase from 'mock-cloud-firestore';
 
@@ -55,7 +56,85 @@ describe('Container', () => {
       fireEvent.click(deleteOrderBtn);
     });
     productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(0); 
+  });
+
+  it('deberia poder ver los items del menu segun la opcion seleccionada', async () => {
+    const { getByTestId, queryAllByTestId } = render(<Container />);
+
+    let productList = queryAllByTestId('product-list');
+     expect(productList).toHaveLength(0);
+
+     const breakfastBtn = await waitForElement(() => getByTestId('breakfast-btn'));
+     await act(async () => {
+       fireEvent.click(breakfastBtn);
+     });
+
+     productList = queryAllByTestId('product-list');
+     expect(productList).toHaveLength(2);
+  });
+
+  it('deberia poder aumentar la cantidad del producto en la orden', async () => {
+    const { getByTestId, queryAllByTestId } = render(<Container />);
+
+    let productTableItems = queryAllByTestId('productTableItem');
     expect(productTableItems).toHaveLength(0);
+
+    let addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
+    await act(async () => {
+      fireEvent.click(addOrderBtn);
+    });
+    productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(1);
+
+    const updateItemBtn = await waitForElement(() => getByTestId('0-updateItem-btn'));
+    await act(async () => {
+      fireEvent.click(updateItemBtn);
+    });
+    let amount = getByTestId('0-amount');
+    expect(amount.textContent).toEqual('2');
+
+    
+  });
+  it('deberia aumentar la cantidad del producto si ya existen en la orden', async () => {
+    const { getByTestId, queryAllByTestId } = render(<Container />);
+
+    let productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(0);
+
+    let addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
+    await act(async () => {
+      fireEvent.click(addOrderBtn);
+    });
+    productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(1);
+
+    addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
+    await act(async () => {
+      fireEvent.click(addOrderBtn);
+    });
+    let amount = getByTestId('0-amount');
+    expect(amount.textContent).toEqual('2');
+  });
+
+  it('deberia poder escribir el nombre del usuario', async () => {
+    const { getByTestId, queryAllByTestId } = render(<Container />);
+
+    let productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(0);
+
+    const addOrderBtn = await waitForElement(() => getByTestId('1-addOrderItem-btn'));
+    await act(async () => {
+      fireEvent.click(addOrderBtn);
+    });
+    productTableItems = queryAllByTestId('productTableItem');
+    expect(productTableItems).toHaveLength(1);
+
+    const input = await waitForElement(() => getByTestId('client-input'));
+    await act(async() => {
+      fireEvent.change(input, { target: { value: 'chester' } });
+    });
+    expect(input.value).toBe('chester');
   });
 
   it('deberia poder agregar la orden a firebase', async () => {

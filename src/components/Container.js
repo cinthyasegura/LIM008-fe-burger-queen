@@ -32,7 +32,10 @@ const Container = () => {
       : setOrderItems([...orderItems, orderList]) 
   };
 
-  const deleteItem = id => setOrderItems(orderItems.filter(item => item.id !== id));
+  const deleteItem = id => {
+    setOrderItems(orderItems.filter(item => item.id !== id));
+    
+  };
 
   const updateItem = (index, item) => {
     const newItems = [...orderItems];

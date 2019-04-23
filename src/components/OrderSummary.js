@@ -16,7 +16,7 @@ const OrderSummary = ({
           <th className="tb-header">Eliminar</th>
         </tr>
       </thead>
-      <tbody data-testid="productTable">
+      <tbody>
         {orderItems.length > 0 ? (
           orderItems.map((item, index) => (
             <tr key={item.id} data-testid="productTableItem">
@@ -32,7 +32,7 @@ const OrderSummary = ({
                   }}
                   data-testid={`${index}-updateItem-btn`}
                 />
-                {item.quantity}
+                <span data-testid={`${index}-amount`}>{item.quantity}</span>
                 <img
                   src="image/menos-simbolo.png"
                   alt="disminuir"
