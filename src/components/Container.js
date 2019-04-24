@@ -24,17 +24,16 @@ const Container = () => {
   const matchOption = (option) => {
     setOptions(option);
   };
- 
+
   const addOrderItem = (orderArr, orderList) => {
     const elementMatch = orderArr.find(item => item.id === orderList.id);
-    return elementMatch 
-      ? (orderList.quantity += 1, setOrderItems([...orderItems])) 
-      : setOrderItems([...orderItems, orderList]) 
+    elementMatch
+      ? (orderList.quantity += 1, setOrderItems([...orderItems]))
+      : setOrderItems([...orderItems, orderList]);
   };
 
-  const deleteItem = id => {
+  const deleteItem = (id) => {
     setOrderItems(orderItems.filter(item => item.id !== id));
-    
   };
 
   const updateItem = (index, item) => {
@@ -50,10 +49,10 @@ const Container = () => {
   const addOrderToFirebase = (e) => {
     e.preventDefault();
     const db = firebase.firestore();
-    db.collection('users').add({ 
+    db.collection('users').add({
       clientsName,
       orderItems,
-      date: firebase.firestore.FieldValue.serverTimestamp()
+      date: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setClientsName('');
     setOrderItems([]);

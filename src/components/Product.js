@@ -8,8 +8,10 @@ const Product = ({
   <div className="media items" data-testid="product-list">
     <img className="align-self-center ml-3 mr-8 icons" src={image} alt={name} />
     <span className="padding mt-2">
-      {name} < br/>
-      Precio: $ {price}
+      {name}
+      <br />
+      Precio: $ 
+      {price}
     </span>
     <img
       alt="agregar orden"

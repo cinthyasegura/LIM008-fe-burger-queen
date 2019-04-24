@@ -1,22 +1,35 @@
 module.exports = {
-    "extends": "airbnb",
-    "plugins": [
-        "react",
-        "react-hooks",
-        "jest"
-      ],
-    "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "linebreak-style": 0,
-        "jest/no-disabled-tests": "warn",
-        "jest/no-focused-tests": "error",
-        "jest/no-identical-title": "error",
-        "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error"
+    env: {
+      browser: true,
+      es6: true,
+      "jest/globals": true
+    },
+    extends: ["airbnb", "prettier", "prettier/react"],
+    globals: {
+      Atomics: 'readonly',
+      SharedArrayBuffer: 'readonly',
+    },
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
       },
-    "extends": ["plugin:jest/recommended"],
-    "parser": "babel-eslint"
-      
-};
+      ecmaVersion: 2018,
+      sourceType: 'module',
+    },
+    plugins: [
+      'react',
+      'react-hooks',
+      'jest'
+    ],
+    rules: {
+      'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "linebreak-style": 0,
+      "jest/valid-expect": "error"
+    },
+  };

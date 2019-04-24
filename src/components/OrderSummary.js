@@ -23,6 +23,7 @@ const OrderSummary = ({
               <td>
                 <img
                   src="image/mas1.png"
+                  role="presentation"
                   alt="aumentar"
                   className="btn-none add"
                   onClick={() => {
@@ -35,12 +36,13 @@ const OrderSummary = ({
                 <span data-testid={`${index}-amount`}>{item.quantity}</span>
                 <img
                   src="image/menos-simbolo.png"
+                  role="presentation"
                   alt="disminuir"
                   className="btn-none minus"
                   onClick={() => {
                     const newItemToDecrease = { ...item };
                     newItemToDecrease.quantity -= 1;
-                    if(newItemToDecrease.quantity < 1) {
+                    if (newItemToDecrease.quantity < 1) {
                       newItemToDecrease.quantity = 1;
                     }
                     updateItem(index, newItemToDecrease);
@@ -53,7 +55,7 @@ const OrderSummary = ({
                 {`$ ${item.price * item.quantity}`}
               </td>
               <td>
-                <img  src="image/basura.png" alt="eliminar" className="pointer btn-none" onClick={() => deleteItem(item.id)} data-testid={`${index}-deleteItem-btn`} />
+                <img src="image/basura.png" alt="eliminar" role="presentation" className="pointer btn-none" onClick={() => deleteItem(item.id)} data-testid={`${index}-deleteItem-btn`} />
               </td>
             </tr>
           ))
@@ -67,24 +69,24 @@ const OrderSummary = ({
         <tr>
           <th colSpan="2">Total:</th>
           <td>
-$
+            $
             {orderItems.reduce((acum, element) => acum + (element.quantity * element.price), 0)}
 
           </td>
         </tr>
       </tfoot>
     </table> 
-      <label htmlFor="client"></label>
-      <input
-        type="text"
-        name="client"
-        id="client"
-        placeholder="Nombre del cliente"
-        onChange={updateInput}
-        value={clientsName}
-        className="input"
-        data-testid="client-input"
-      />
+    <label htmlFor="client"></label>
+    <input
+      type="text"
+      name="client"
+      id="client"
+      placeholder="Nombre del cliente"
+      onChange={updateInput}
+      value={clientsName}
+      className="input"
+      data-testid="client-input"
+    />
     <button className="rounded bg text-light" type="submit" data-testid="add-to-firebase">Enviar a cocina</button>
   </form>
 );
