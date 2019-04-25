@@ -15,10 +15,10 @@ const Container = () => {
   useEffect(() => {
     async function fetchDta() {
       const result = await axios('https://raw.githubusercontent.com/cinthyasegura/LIM008-fe-burger-queen/firstStory/src/data/menu.json');
-      setMenu([...result.data]);
+      setMenu([...result.data, menu]);
       setOptions('breakfast');
     }
-    fetchDta();
+    fetchDta(); 
   }, []);
 
   const matchOption = (option) => {
