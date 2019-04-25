@@ -27,7 +27,7 @@ const Container = () => {
 
   const addOrderItem = (orderArr, orderList) => {
     const elementMatch = orderArr.find(item => item.id === orderList.id);
-    elementMatch
+    return elementMatch
       ? (orderList.quantity += 1, setOrderItems([...orderItems]))
       : setOrderItems([...orderItems, orderList]);
   };
@@ -78,7 +78,7 @@ const Container = () => {
           clientsName={clientsName}
         />
       </div>
-    </div>
+    </div>  
   );
 };
 

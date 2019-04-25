@@ -1,6 +1,5 @@
 import React from 'react';
 import { cleanup, render, fireEvent, waitForElement, act } from 'react-testing-library';
-import { getByText } from 'dom-testing-library';
 import Container from '../Container';
 import MockFirebase from 'mock-cloud-firestore';
 
