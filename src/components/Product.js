@@ -10,7 +10,7 @@ const Product = ({
     <span className="padding mt-2">
       {name}
       <br />
-      Precio: $ 
+      Precio: $
       {price}
     </span>
     <img

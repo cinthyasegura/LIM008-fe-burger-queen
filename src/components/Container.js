@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import firebase from '../firebase';
+import firebase, { userRef } from '../firebase';
 import Tabs from './layout/Tabs';
 import ProductList from './ProductList';
 import OrderSummary from './OrderSummary';
@@ -15,15 +15,13 @@ const Container = () => {
   useEffect(() => {
     async function fetchDta() {
       const result = await axios('https://raw.githubusercontent.com/cinthyasegura/LIM008-fe-burger-queen/firstStory/src/data/menu.json');
-      setMenu([...result.data, menu]);
+      setMenu([...result.data]);
       setOptions('breakfast');
     }
-    fetchDta(); 
+    fetchDta();
   }, []);
 
-  const matchOption = (option) => {
-    setOptions(option);
-  };
+  const matchOption = option => setOptions(option);
 
   const addOrderItem = (orderArr, orderList) => {
     const elementMatch = orderArr.find(item => item.id === orderList.id);
@@ -48,14 +46,17 @@ const Container = () => {
 
   const addOrderToFirebase = (e) => {
     e.preventDefault();
-    const db = firebase.firestore();
-    db.collection('users').add({
-      clientsName,
-      orderItems,
-      date: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-    setClientsName('');
-    setOrderItems([]);
+    if (orderItems !== [] && clientsName !== '') {
+      userRef.add({
+        clientsName,
+        orderItems,
+        date: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+      setClientsName('');
+      setOrderItems([]);
+    } else {
+      alert('completa el nombre del cliente');
+    }
   };
 
   return (
@@ -78,7 +79,7 @@ const Container = () => {
           clientsName={clientsName}
         />
       </div>
-    </div>  
+    </div>
   );
 };
 

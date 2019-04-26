@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { userRef } from '../firebase';
+import { userRef } from './firebase';
 
-// import getData from '../getData';
-// import OrderList from './OrderList';
 
-const Order = () => {
+const getData = () => {
   const [result, setResult] = useState([]);
 
   useEffect(() => {
@@ -47,4 +45,4 @@ const Order = () => {
 //   });
 // };
 
-export default Order;
+export default getData;

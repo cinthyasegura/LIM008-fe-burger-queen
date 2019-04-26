@@ -48,7 +48,7 @@ const OrderSummary = ({
                     updateItem(index, newItemToDecrease);
                   }}
                   data-testid={`${index}-updateDecreaseItem-btn`}
-                /> 
+                />
               </td>
               <td>{item.name}</td>
               <td>
@@ -69,25 +69,26 @@ const OrderSummary = ({
         <tr>
           <th colSpan="2">Total:</th>
           <td>
-            $
-            {orderItems.reduce((acum, element) => acum + (element.quantity * element.price), 0)}
+$
+           {orderItems.reduce((acum, element) => acum + (element.quantity * element.price), 0)}
 
           </td>
         </tr>
       </tfoot>
-    </table> 
-    <label htmlFor="client"></label>
-    <input
-      type="text"
-      name="client"
-      id="client"
-      placeholder="Nombre del cliente"
-      onChange={updateInput}
-      value={clientsName}
-      className="input"
-      data-testid="client-input"
-    />
-    <button className="rounded bg text-light" type="submit" data-testid="add-to-firebase">Enviar a cocina</button>
+    </table>
+    <label htmlFor="client" className="col-sm-6">
+      <input
+        type="text"
+        name="client"
+        id="client"
+        placeholder="Nombre del cliente"
+        onChange={updateInput}
+        value={clientsName}
+        className="input"
+        data-testid="client-input"
+      />
+    </label>
+    <button className="rounded bg-btn text-light col-sm-6" type="submit" data-testid="add-to-firebase">Enviar a cocina</button>
   </form>
 );
 

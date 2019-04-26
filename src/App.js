@@ -5,8 +5,8 @@ import Header from './components/layout/Header';
 const App = () => (
   <div>
     <Header />
-    <Main /> 
-  </div> 
+    <Main />
+  </div>
 );
 
 export default App;

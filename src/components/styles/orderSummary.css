@@ -2,11 +2,11 @@
     margin-top: 55px;
     margin-left: 20px;
     margin-right: 25px;
-    width: 40%;
+    width: 70%;
     border: none;
     border-bottom: 2px solid #8c8c8c;
 }
-.bg {
+.bg-btn {
     width: 40%;
     background: #E60023;
     border-style: none;
@@ -32,5 +32,13 @@
 @media (max-width: 700px) {
     .tb-header {
       font-size: 18px;
+    }
+    .input {
+      width: 85%;
+    }
+    .bg-btn {
+      width: 70%;
+      margin-top: 5%;
+      margin-left: 12%;
     }
 }
