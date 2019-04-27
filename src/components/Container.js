@@ -50,7 +50,7 @@ const Container = () => {
       userRef.add({
         clientsName,
         orderItems,
-        date: firebase.firestore.FieldValue.serverTimestamp(),
+        date: `${new Date().getHours()} : ${new Date().getSeconds()}`,
       });
       setClientsName('');
       setOrderItems([]);

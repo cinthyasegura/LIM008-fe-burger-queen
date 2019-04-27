@@ -8,7 +8,6 @@ const Order = () => {
   const [result, setResult] = useState([]);
 
   useEffect(() => {
-    setResult([]);
     const unsubscribe = userRef.onSnapshot((snap) => {
       const data = [];
       snap.forEach((doc) => {
@@ -22,11 +21,24 @@ const Order = () => {
     return unsubscribe;
   }, []);
 
+  // const dateFormat = (date) => {
+  //   const dateNow = new Date(date * 1000);
+  //   const hours = dateNow.getHours();
+  //   const minutes = `0 + ${dateNow.getMinutes()}`;
+  //   const seconds = `0 + ${dateNow.getSeconds()}`;
+  //   const formattedTime = `${hours} : ${minutes.substr(-2)} : ${seconds.substr(-2)}`;
+  //   console.log(formattedTime)
+  //   return formattedTime;   
+  // };
+
   return (
     <div>
-      {result.map((item) => {
+      {result.map((item, key) => {
         return (
-          <div>{item.clientsName}</div>
+          <div key={key}>
+            <div>{item.clientsName}</div>
+            <div>{item.date}</div>
+          </div>
         );
       })}
     </div>

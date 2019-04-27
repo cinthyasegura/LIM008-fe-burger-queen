@@ -25,6 +25,7 @@ const getData = () => {
       {result.map((item) => {
         return (
           <div>{item.clientsName}</div>
+          <div>{item.date}</div>
         );
       })}
     </div>
