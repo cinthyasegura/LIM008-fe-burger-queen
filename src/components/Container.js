@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import firebase, { userRef } from '../firebase';
+import { db } from '../firebase';
+import dateFormat from '../util/date';
 import Tabs from './layout/Tabs';
 import ProductList from './ProductList';
 import OrderSummary from './OrderSummary';
@@ -47,10 +48,10 @@ const Container = () => {
   const addOrderToFirebase = (e) => {
     e.preventDefault();
     if (orderItems !== [] && clientsName !== '') {
-      userRef.add({
+      db.collection('users').add({
         clientsName,
         orderItems,
-        date: `${new Date().getHours()} : ${new Date().getSeconds()}`,
+        date: dateFormat(),
       });
       setClientsName('');
       setOrderItems([]);
